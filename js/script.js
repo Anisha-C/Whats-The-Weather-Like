@@ -65,3 +65,38 @@ function displayFuture(daily) {
     document.getElementById("future").innerHTML = futureHtml
 
 }
+var searchBtn = document.getElementById("search")
+var input = document.getElementById("City")
+searchBtn.addEventListener("click", function () {
+    locationApi(input.value)
+})
+
+function saveLocalStg(cityName) {
+    let cityStorage = JSON.parse(localStorage.getItem("cities")) || []
+    if (cityStorage.includes(cityName)) return
+    cityStorage.push(cityName)
+    localStorage.setItem("cities", JSON.stringify(cityStorage))
+}
+
+function displayButton() {
+    let cityStorage = JSON.parse(localStorage.getItem("cities")) || []
+    let buttonHtml = ""
+    let cities = []
+    cityStorage.forEach(city => {
+        let button = `<button class = "cityBtn">${city}</button>`
+        buttonHtml += button
+        cities.push(city)
+    });
+    let buttons = document.getElementById("buttons")
+    buttons.innerHTML = buttonHtml
+    let bn = document.getElementsByClassName("cityBtn")
+    console.log(bn)
+    // bn.forEach((btn, i) => btn.addEventListener("click", locationApi(cities[i])))
+    for (let i = 0; i < bn.length; i++) {
+        const btn = bn[i];
+        btn.addEventListener("click",() => locationApi(cities[i]))
+    }
+    
+}
+
+displayButton()

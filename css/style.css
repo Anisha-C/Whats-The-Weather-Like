@@ -23,3 +23,38 @@
     font-weight: bold;
 }
 
+.five{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2em;
+    font-weight: bold; 
+}
+
+.btn btn-info{
+    display: inline;
+}
+
+#recent {
+    border: 1em;
+}
+
+#future {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    justify-content: space-between;
+}
+
+.card-style{
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content: space-between;
+justify-content: space-around;
+}
+
+.cityBtn{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}

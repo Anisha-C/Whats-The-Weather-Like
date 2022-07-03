@@ -49,21 +49,19 @@ function displayFuture(daily) {
         let humidity = daily[i].humidity
         let card = `
         <div class="card" style="width: 18rem;">
-        <img src="http://openweathermap.org/img/wn/${icon}@2x.png" class="card-img-top" alt="${daily[i].weather[0].description}">
-        <div class="card-body">
-            <h5 class="card-title">${time}</h5>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Temp; ${temperature}</li>
-            <li class="list-group-item">Wind; ${wind}</li>
-            <li class="list-group-item">Humidity; ${humidity}</li>
-        </ul>
-    </div>
-        `
+            <img src="http://openweathermap.org/img/wn/${icon}@2x.png" class="card-img-top" alt="${daily[i].weather[0].description}">
+            <div class="card-body">
+                <h5 class="card-title">${time}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Temp; ${temperature}</li>
+                <li class="list-group-item">Wind; ${wind}</li>
+                <li class="list-group-item">Humidity; ${humidity}</li>
+            </ul>
+        </div>`
         futureHtml += card
     }
     document.getElementById("future").innerHTML = futureHtml
-
 }
 var searchBtn = document.getElementById("search")
 var input = document.getElementById("City")
@@ -94,9 +92,9 @@ function displayButton() {
     // bn.forEach((btn, i) => btn.addEventListener("click", locationApi(cities[i])))
     for (let i = 0; i < bn.length; i++) {
         const btn = bn[i];
-        btn.addEventListener("click",() => locationApi(cities[i]))
+        btn.addEventListener("click", () => locationApi(cities[i]))
     }
-    
+
 }
 
 displayButton()
